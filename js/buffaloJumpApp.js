@@ -109,7 +109,7 @@ angular.module('buffaloJumpApp',[])
 
 
 		vrScene.addEventListener("loaded",function(){
-			console.log("loaded!");
+			console.log("loaded!!");
 			setupScene();
 		});
 
