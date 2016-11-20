@@ -108,13 +108,14 @@ angular.module('buffaloJumpApp',[])
 
 		var sky = document.querySelector("#sky");
 		var vrScene = document.querySelector("#scene");
-
+		$scope.followBtnImgUrl = 'images/sound.png'
 
 
 		vrScene.addEventListener("loaded",function(){
 			console.log("loaded!!");
 			setupScene();
 		});
+
 
 
 		//initialize scene
@@ -141,6 +142,11 @@ angular.module('buffaloJumpApp',[])
 			} else {
 				descriptor.audio.pause();
 				descriptor.audio = null;
+			}
+			if ($scope.followBtnImgUrl === 'images/sound.png') {
+					$scope.followBtnImgUrl =  'images/navigate.svg';
+			} else {
+					$scope.followBtnImgUrl = 'images/sound.png';
 			}
 		}
 

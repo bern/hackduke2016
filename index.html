@@ -46,7 +46,9 @@
           ng-mouseenter="descMouseEnter(descriptor)"
           ng-mouseover="descMouseEnter(descriptor)"
           ng-click="descClick(descriptor)"
-          class="describe" id="{{descriptor.id}}" src="images/sound.png" width=".5" height=".5"
+          ng-click="toggleImage()"
+          class="describe" id="{{descriptor.id}}" ng-src="{{followBtnImgUrl}}"
+          width=".5" height=".5"
           opacity=".65"
           position="{{descriptor.position}}"
           cursor="maxDistance:2">
