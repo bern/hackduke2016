@@ -14,13 +14,13 @@
     <a-scene id="scene">
 
       <a-sky id="sky" src="" rotation="0 130 0"></a-sky>
-      <a-cursor id="camera" position="0 1.8 4"
-        visible="true"
-        scale="3"
-        color="red"
-        offset="2"
-        maxdistance="10"
-        opacity="0.6"></a-camera>
+      <a-camera id="camera" position="0 1.8 4"
+        cursor-visible="true"
+        cursor-scale="3"
+        cursor-color="red"
+        cursor-offset="2"
+        cursor-maxdistance="10"
+        cursor-opacity="0.6"></a-camera>
 
       <a-image
           ng-repeat="navPoint in scene.navPoints"
