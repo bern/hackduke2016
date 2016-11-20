@@ -5,9 +5,10 @@
     <title>Buffalo Jump Entrance</title>
     <meta name="description" content="Buffalo Jump Entrance">
     <link rel="stylesheet" type="text/css" href="css/vr.css">
-    <script src="js/lib/aframe_dev.js"></script>
     <script src="js/lib/angular.min.js"></script>
     <script src="js/buffaloJumpApp.js"></script>
+    <script src="https://aframe.io/releases/0.3.0/aframe.js"> </script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
   </head>
   <body ng-controller="buffaloJumpController">
     <a-scene id="scene">
@@ -54,8 +55,7 @@
           <a-mouseenter ng-mouseenter="descMouseEnter(descriptor)" scale="{{descriptor.mouseEnterScale}}"></a-mouseenter>
           <a-mouseleave scale="{{descriptor.mouseLeaveScale}}"></a-mouseleave>
       </a-image>
-
-    </a-scene>
+     </a-scene>
 
 
   </body>
