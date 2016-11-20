@@ -25,6 +25,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/man.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "0 0 0"
 						,id: "man"
 						,src: "images/sound.png"
 					},
@@ -35,6 +36,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/car.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "0 0 0"
 						,id: "car"
 						,src: "images/car_asset.png"
 					},
@@ -44,6 +46,7 @@ angular.module('buffaloJumpApp',[])
 						,followBtnImgUrl: 'images/sound.png'
 						,secondaryImage: "images/sunny.png"
 						,mouseEnterScale: "6 6 6"
+						,rotation: "180 0 180"
 						,mouseLeaveScale: "1 1 1"
 						,id: "sunny"
 						,src: "images/sound.png"
@@ -71,6 +74,7 @@ angular.module('buffaloJumpApp',[])
 						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "6 6 6"
+						,rotation: "0 0 0"
 						,mouseLeaveScale: "1 1 1"
 						,id: "jump"
 						,src: "images/sound.png"
@@ -82,6 +86,7 @@ angular.module('buffaloJumpApp',[])
 						,soundSrc: "sounds/cloudy.wav"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "180 0 180"
 						,id: "cloudy"
 						,src: "images/sound.png"
 					},
@@ -92,6 +97,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/grass.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "180 0 180"
 						,id: "grass"
 						,src: "images/sound.png"
 					},
@@ -102,6 +108,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/mountain.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "0 0 0"
 						,id: "mountains"
 						,src: "images/sound.png"
 					}
@@ -200,6 +207,7 @@ angular.module('buffaloJumpApp',[])
 			$scope.audio.play();
 			if (descriptor.followBtnImgUrl === 'images/sound.png') {
 					descriptor.followBtnImgUrl =  descriptor.secondaryImage;
+					descriptor.rotation = descriptor.rotation;
 			} else {
 					descriptor.followBtnImgUrl = 'images/sound.png';
 			}
