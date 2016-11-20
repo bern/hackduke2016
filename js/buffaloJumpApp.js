@@ -20,8 +20,10 @@ angular.module('buffaloJumpApp',[])
 				,descriptors: [
 					{
 						position: "3.2 2 1" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/man.wav"
-						,mouseEnterScale: "2 2 1"
+						,secondaryImage: "images/man.png"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "man"
 						,src: "images/sound.png"
@@ -29,7 +31,9 @@ angular.module('buffaloJumpApp',[])
 					{
 						position: "3.2 2 -2" // "x y z"
 						,soundSrc: "sounds/car.wav"
-						,mouseEnterScale: "2 2 1"
+						,followBtnImgUrl: 'images/sound.png'
+						,secondaryImage: "images/car.png"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "car"
 						,src: "images/car_asset.png"
@@ -37,7 +41,9 @@ angular.module('buffaloJumpApp',[])
 					{
 						position: "-0 3.5 11" // "x y z"
 						,soundSrc: "sounds/sunny.wav"
-						,mouseEnterScale: "2 2 1"
+						,followBtnImgUrl: 'images/sound.png'
+						,secondaryImage: "images/sunny.png"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "sunny"
 						,src: "images/sound.png"
@@ -62,32 +68,39 @@ angular.module('buffaloJumpApp',[])
 				,descriptors: [
 					{
 						position: "3.2 2.5 2" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
-						,mouseEnterScale: "2 2 1"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "jump"
 						,src: "images/sound.png"
 					},
 					{
 						position: "-0 3.5 11" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
+						,secondaryImage: "images/cloudy.png"
 						,soundSrc: "sounds/cloudy.wav"
-						,mouseEnterScale: "2 2 1"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "cloudy"
 						,src: "images/sound.png"
 					},
 					{
 						position: "1.6 0 7" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/grass.wav"
-						,mouseEnterScale: "2 2 1"
+						,secondaryImage: "images/grass.png"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "grass"
 						,src: "images/sound.png"
 					},
 					{
 						position: "-2.7 1.7 2" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/mountains.wav"
-						,mouseEnterScale: "2 2 1"
+						,secondaryImage: "images/mountain.png"
+						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
 						,id: "mountains"
 						,src: "images/sound.png"
@@ -136,13 +149,14 @@ angular.module('buffaloJumpApp',[])
 
 		var sky = document.querySelector("#sky");
 		var vrScene = document.querySelector("#scene");
-
+		$scope.followBtnImgUrl = 'images/sound.png'
 
 
 		vrScene.addEventListener("loaded",function(){
 			console.log("loaded!!");
 			setupScene();
 		});
+
 
 
 		//initialize scene
@@ -178,6 +192,11 @@ angular.module('buffaloJumpApp',[])
 			} else {
 				$scope.audio.pause();
 				$scope.audio = null;
+			}
+			if (descriptor.followBtnImgUrl === 'images/sound.png') {
+					descriptor.followBtnImgUrl =  descriptor.secondaryImage;
+			} else {
+					descriptor.followBtnImgUrl = 'images/sound.png';
 			}
 		}
 
