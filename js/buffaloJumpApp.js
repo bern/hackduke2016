@@ -183,6 +183,13 @@ angular.module('buffaloJumpApp',[])
 			}
 		}
 
+		document.addEventListener("click", function(evnt){
+			if ($scope.audio !== undefined && $scope.audio !== null) {
+				$scope.audio = new Audio("sounds/test.wav");
+				$scope.audio.pause()
+			}
+		});
+
 		$scope.descClick = function(descriptor){
 			// Play audio here.
 			console.log(descriptor)
