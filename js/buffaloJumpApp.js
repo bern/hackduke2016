@@ -111,9 +111,14 @@ angular.module('buffaloJumpApp',[])
 		}
 		$scope.descClick = function(descriptor){
 			// Play audio here.
-			var audio = new Audio(descriptor.soundSrc);
-			audio.play();
-
+			console.log(descriptor.audio)
+			if (descriptor.audio === undefined || descriptor.audio === null) {
+				descriptor.audio = new Audio(descriptor.soundSrc);
+				descriptor.audio.play();
+			} else {
+				descriptor.audio.pause();
+				descriptor.audio = null;
+			}
 		}
 
 	}]);
