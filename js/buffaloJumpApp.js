@@ -133,7 +133,7 @@ angular.module('buffaloJumpApp',[])
 			// Play audio here.
 			var audio = new Audio(descriptor.soundSrc);
 			audio.play();
-		}
 
+		}
 
 	}]);
