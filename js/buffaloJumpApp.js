@@ -53,6 +53,15 @@ angular.module('buffaloJumpApp',[])
 						,id:"nav2"
 					}
 				]
+				,descriptors: [
+					{
+						position: "3.2 2 0" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "testSound"
+					}
+				]
 			}
 			,face: {
 				skySmallImage: "images/face_small.jpg"
@@ -108,7 +117,7 @@ angular.module('buffaloJumpApp',[])
 		//initialize scene
 		 $scope.scene = scenes.pavilion;
 
-		
+
 		$scope.navMouseEnter = function(){
 
 			console.log(this);
@@ -116,6 +125,14 @@ angular.module('buffaloJumpApp',[])
 		$scope.navClick = function(navPoint){
 			$scope.scene = scenes[navPoint.destination];
 			setupScene();
+		}
+		$scope.descMouseEnter = function() {
+			console.log(this);
+		}
+		$scope.descClick = function(descriptor){
+			// Play audio here.
+			var audio = new Audio(descriptor.soundSrc);
+			audio.play();
 		}
 
 

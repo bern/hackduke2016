@@ -13,40 +13,50 @@
     <a-scene id="scene">
 
       <a-sky id="sky" src="" rotation="0 130 0"></a-sky>
-      <a-camera id="camera" position="0 1.8 4" 
-        cursor-visible="true" 
-        cursor-scale="3" 
-        cursor-color="red" 
-        cursor-offset="2" 
-        cursor-maxdistance="10" 
+      <a-camera id="camera" position="0 1.8 4"
+        cursor-visible="true"
+        cursor-scale="3"
+        cursor-color="red"
+        cursor-offset="2"
+        cursor-maxdistance="10"
         cursor-opacity="0.6"></a-camera>
 
-      <a-image 
+      <a-image
           ng-repeat="navPoint in scene.navPoints"
           ng-mouseenter="navMouseEnter(navPoint)"
           ng-mouseover="navMouseEnter(navPoint)"
           ng-click="navClick(navPoint)"
-          class="navigate" id="{{navPoint.id}}" src="images/navigate.svg" width=".5" height=".5" 
-          opacity=".65" 
-          position="{{navPoint.position}}" 
+          class="navigate" id="{{navPoint.id}}" src="images/navigate.svg" width=".5" height=".5"
+          opacity=".65"
+          position="{{navPoint.position}}"
           cursor="maxDistance:2">
 
         <a-mouseenter ng-mouseenter="navMouseEnter(navPoint)" scale="2 2 1" rotation="{{navPoint.mouseEnterRotation}}}" ></a-mouseenter>
         <a-mouseleave scale="{{navPoint.mouseLeaveScale}}"></a-mouseleave>
 
-        <a-animation  
-          attribute="rotation" 
-          from="{{navPoint.animationFrom}}" 
-          to="{{navPoint.animationTo}}" 
+        <a-animation
+          attribute="rotation"
+          from="{{navPoint.animationFrom}}"
+          to="{{navPoint.animationTo}}"
           dur="3000" fill="backwards" repeat="indefinite" easing="ease-expo" ></a-animation>
       </a-image>
 
-      
+      <a-image
+          ng-repeat="descriptor in scene.descriptors"
+          ng-mouseenter="descMouseEnter(descriptor)"
+          ng-mouseover="descMouseEnter(descriptor)"
+          ng-click="descClick(descriptor)"
+          class="describe" id="{{descriptor.id}}" src="images/sound.png" width=".5" height=".5"
+          opacity=".65"
+          position="{{descriptor.position}}"
+          cursor="maxDistance:2">
 
-      
+          <a-mouseenter ng-mouseenter="descMouseEnter(descriptor)" scale="{{descriptor.mouseEnterScale}}"></a-mouseenter>
+          <a-mouseleave scale="{{descriptor.mouseLeaveScale}}"></a-mouseleave>
+      </a-image>
 
     </a-scene>
 
-    
+
   </body>
 </html>
