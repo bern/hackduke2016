@@ -58,11 +58,32 @@ angular.module('buffaloJumpApp',[])
 				]
 				,descriptors: [
 					{
-						position: "3.2 2 0" // "x y z"
+						position: "3.2 2.5 2" // "x y z"
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
-						,id: "testSound"
+						,id: "jump"
+					},
+					{
+						position: "-0 3.5 11" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "clouds"
+					},
+					{
+						position: "1.6 0 7" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "grass"
+					},
+					{
+						position: "-2.7 1.7 2" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "mountains"
 					}
 				]
 			}
