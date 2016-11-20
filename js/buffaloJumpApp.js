@@ -17,6 +17,29 @@ angular.module('buffaloJumpApp',[])
 						,id: "nav1"
 					}
 				]
+				,descriptors: [
+					{
+						position: "3.2 2 1" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "man"
+					},
+					{
+						position: "3.2 2 -2" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "car"
+					},
+					{
+						position: "-0 3.5 11" // "x y z"
+						,soundSrc: "sounds/test.wav"
+						,mouseEnterScale: "2 2 1"
+						,mouseLeaveScale: "1 1 1"
+						,id: "sun"
+					}
+				]
 			}
 			,pavilion: {
 				skySmallImage: "images/pavilion_small.jpg"

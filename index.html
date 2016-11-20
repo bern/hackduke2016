@@ -31,7 +31,7 @@
           position="{{navPoint.position}}"
           cursor="maxDistance:2">
 
-        <a-mouseenter ng-mouseenter="navMouseEnter(navPoint)" scale="2 2 1" rotation="{{navPoint.mouseEnterRotation}}}" ></a-mouseenter>
+        <a-mouseenter ng-mouseenter="navMouseEnter(navPoint)" scale="{{navPoint.mouseEnterScale}}" rotation="{{navPoint.mouseEnterRotation}}}" ></a-mouseenter>
         <a-mouseleave scale="{{navPoint.mouseLeaveScale}}"></a-mouseleave>
 
         <a-animation
