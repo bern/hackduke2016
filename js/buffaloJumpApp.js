@@ -14,6 +14,7 @@ angular.module('buffaloJumpApp',[])
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
 						,destination: "pavilion"
+						,soundSrc: "sounds/entrance.wav"
 						,id: "nav1"
 					}
 				]
@@ -57,7 +58,7 @@ angular.module('buffaloJumpApp',[])
 				skySmallImage: "images/pavilion_small.jpg"
 				,skyRotation: "0 220 0"
 				,navPoints: [
-					,{
+					{
 						position: "-4 1.6 4"
 						,animationFrom: "0 90 0"
 						,animationTo: "0 -270 0"
@@ -65,6 +66,7 @@ angular.module('buffaloJumpApp',[])
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
 						,destination: "entrance"
+						,soundSrc: "sounds/jump.wav"
 						,id:"nav2"
 					}
 				]
@@ -73,7 +75,7 @@ angular.module('buffaloJumpApp',[])
 						position: "3.2 2.5 2" // "x y z"
 						,followBtnImgUrl: 'images/sound.png'
 						,secondaryImage: "images/jump.png"
-						,soundSrc: "sounds/test.wav"
+						//,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "6 6 6"
 						,rotation: "0 -60 0"
 						,mouseLeaveScale: "1 1 1"
@@ -127,6 +129,7 @@ angular.module('buffaloJumpApp',[])
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
 						,destination: "pavilion"
+						,soundSrc: "sounds/jump.wav"
 						,id:"nav1"
 					}
 				]
@@ -169,14 +172,28 @@ angular.module('buffaloJumpApp',[])
 
 		//initialize scene
 		 $scope.scene = scenes.entrance;
-
+		 $scope.audio = new Audio("sounds/entrance.wav");
+		 $scope.audio.play();
+		 var playSceneBegun = true;
+		 var playScene = true;
+		 var playSceneThree = true;
 
 		$scope.navMouseEnter = function(){
-
 			console.log(this);
 		}
 		$scope.navClick = function(navPoint){
+			if ($scope.audio !== undefined) {
+				$scope.audio.pause();
+			}
+			console.log(scenes[navPoint.destination]);
+			console.log(scenes[navPoint.destination].navPoints[0]);
+			$scope.audio = new Audio(scenes[navPoint.destination].navPoints[0].soundSrc);
+			$scope.audio.play();
+			console.log($scope.audio)
 			$scope.scene = scenes[navPoint.destination];
+			playScene = true;
+			playSceneBegun = true;
+			playSceneThree = true;
 			setupScene();
 		}
 		$scope.descMouseEnter = function() {
@@ -192,8 +209,9 @@ angular.module('buffaloJumpApp',[])
 		}
 
 		document.addEventListener("click", function(evnt){
-			if($scope.audio == undefined) {
-				$scope.descClick(null);
+			if($scope.audio !== undefined && playScene == true) {
+					playScene = false;
+					$scope.descClick(null);
 			}
 		});
 
