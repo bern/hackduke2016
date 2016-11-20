@@ -43,6 +43,7 @@
 
       <a-image
           ng-repeat="descriptor in scene.descriptors"
+          rotation="{{descriptor.rotation}}"
           ng-mouseenter="descMouseEnter(descriptor)"
           ng-mouseover="descMouseEnter(descriptor)"
           ng-click="descClick(descriptor)"

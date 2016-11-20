@@ -25,6 +25,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/man.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "0 0 0"
 						,id: "man"
 					},
 					{
@@ -34,6 +35,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/car.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "0 0 0"
 						,id: "car"
 					},
 					{
@@ -42,6 +44,7 @@ angular.module('buffaloJumpApp',[])
 						,followBtnImgUrl: 'images/sound.png'
 						,secondaryImage: "images/sunny.png"
 						,mouseEnterScale: "6 6 6"
+						,rotation: "180 0 180"
 						,mouseLeaveScale: "1 1 1"
 						,id: "sun"
 					}
@@ -68,6 +71,7 @@ angular.module('buffaloJumpApp',[])
 						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "6 6 6"
+						,rotation: "0 0 0"
 						,mouseLeaveScale: "1 1 1"
 						,id: "jump"
 					},
@@ -78,6 +82,7 @@ angular.module('buffaloJumpApp',[])
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "180 0 180"
 						,id: "clouds"
 					},
 					{
@@ -87,6 +92,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/grass.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "180 0 180"
 						,id: "grass"
 					},
 					{
@@ -96,6 +102,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/mountain.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
+						,rotation: "0 0 0"
 						,id: "mountains"
 					}
 				]
@@ -179,6 +186,7 @@ angular.module('buffaloJumpApp',[])
 			}
 			if (descriptor.followBtnImgUrl === 'images/sound.png') {
 					descriptor.followBtnImgUrl =  descriptor.secondaryImage;
+					descriptor.rotation = descriptor.rotation;
 			} else {
 					descriptor.followBtnImgUrl = 'images/sound.png';
 			}
