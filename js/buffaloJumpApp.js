@@ -7,7 +7,7 @@ angular.module('buffaloJumpApp',[])
 				,skyRotation: "0 130 0"
 				,navPoints: [
 					{
-						position: "3.2 2 1"
+						position: "4 2 3"
 						,animationFrom: "0 -45 0"
 						,animationTo: "0 315 0"
 						,mouseEnterRotation: "0 -45 0"
@@ -22,26 +22,6 @@ angular.module('buffaloJumpApp',[])
 				skySmallImage: "images/pavilion_small.jpg"
 				,skyRotation: "0 220 0"
 				,navPoints: [
-					{
-						position: "3 1.6 2"
-						,animationFrom: "0 -45 0"
-						,animationTo: "0 315 0"
-						,mouseEnterRotation: "0 -45 0"
-						,mouseEnterScale: "2 2 1"
-						,mouseLeaveScale: "1 1 1"
-						,destination: "face"
-						,id:"nav1"
-					}
-					,{
-						position: "2 1.6 7"
-						,animationFrom: "0 47 0"
-						,animationTo: "0 -313 0"
-						,mouseEnterRotation: "0 -45 0"
-						,mouseEnterScale: "2 2 1"
-						,mouseLeaveScale: "1 1 1"
-						,destination: "overlook"
-						,id:"nav2"
-					}
 					,{
 						position: "-4 1.6 4"
 						,animationFrom: "0 90 0"
@@ -115,7 +95,7 @@ angular.module('buffaloJumpApp',[])
 
 
 		//initialize scene
-		 $scope.scene = scenes.pavilion;
+		 $scope.scene = scenes.entrance;
 
 
 		$scope.navMouseEnter = function(){
