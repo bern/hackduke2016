@@ -186,13 +186,11 @@ angular.module('buffaloJumpApp',[])
 		$scope.descClick = function(descriptor){
 			// Play audio here.
 			console.log(descriptor)
-			if ($scope.audio === undefined || $scope.audio === null) {
-				$scope.audio = new Audio(descriptor.soundSrc);
-				$scope.audio.play();
-			} else {
+			if ($scope.audio !== undefined) {
 				$scope.audio.pause();
-				$scope.audio = null;
 			}
+			$scope.audio = new Audio(descriptor.soundSrc);
+			$scope.audio.play();
 			if (descriptor.followBtnImgUrl === 'images/sound.png') {
 					descriptor.followBtnImgUrl =  descriptor.secondaryImage;
 			} else {
