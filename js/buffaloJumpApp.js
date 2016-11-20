@@ -20,6 +20,7 @@ angular.module('buffaloJumpApp',[])
 				,descriptors: [
 					{
 						position: "3.2 2 1" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
@@ -28,6 +29,7 @@ angular.module('buffaloJumpApp',[])
 					{
 						position: "3.2 2 -2" // "x y z"
 						,soundSrc: "sounds/test.wav"
+						,followBtnImgUrl: 'images/sound.png'
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
 						,id: "car"
@@ -35,6 +37,7 @@ angular.module('buffaloJumpApp',[])
 					{
 						position: "-0 3.5 11" // "x y z"
 						,soundSrc: "sounds/test.wav"
+						,followBtnImgUrl: 'images/sound.png'						
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
 						,id: "sun"
@@ -59,6 +62,7 @@ angular.module('buffaloJumpApp',[])
 				,descriptors: [
 					{
 						position: "3.2 2.5 2" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
@@ -66,6 +70,7 @@ angular.module('buffaloJumpApp',[])
 					},
 					{
 						position: "-0 3.5 11" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
@@ -73,6 +78,7 @@ angular.module('buffaloJumpApp',[])
 					},
 					{
 						position: "1.6 0 7" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
@@ -80,6 +86,7 @@ angular.module('buffaloJumpApp',[])
 					},
 					{
 						position: "-2.7 1.7 2" // "x y z"
+						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "2 2 1"
 						,mouseLeaveScale: "1 1 1"
@@ -164,10 +171,10 @@ angular.module('buffaloJumpApp',[])
 				descriptor.audio.pause();
 				descriptor.audio = null;
 			}
-			if ($scope.followBtnImgUrl === 'images/sound.png') {
-					$scope.followBtnImgUrl =  'images/navigate.svg';
+			if (descriptor.followBtnImgUrl === 'images/sound.png') {
+					descriptor.followBtnImgUrl =  'images/navigate.svg';
 			} else {
-					$scope.followBtnImgUrl = 'images/sound.png';
+					descriptor.followBtnImgUrl = 'images/sound.png';
 			}
 		}
 
