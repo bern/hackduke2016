@@ -25,7 +25,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/man.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
-						,rotation: "0 0 0"
+						,rotation: "0 -45 0"
 						,id: "man"
 						,src: "images/sound.png"
 					},
@@ -36,7 +36,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/car.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
-						,rotation: "0 0 0"
+						,rotation: "0 -45 0"
 						,id: "car"
 						,src: "images/car_asset.png"
 					},
@@ -72,9 +72,10 @@ angular.module('buffaloJumpApp',[])
 					{
 						position: "3.2 2.5 2" // "x y z"
 						,followBtnImgUrl: 'images/sound.png'
+						,secondaryImage: "images/jump.png"
 						,soundSrc: "sounds/test.wav"
 						,mouseEnterScale: "6 6 6"
-						,rotation: "0 0 0"
+						,rotation: "0 -60 0"
 						,mouseLeaveScale: "1 1 1"
 						,id: "jump"
 						,src: "images/sound.png"
@@ -97,7 +98,7 @@ angular.module('buffaloJumpApp',[])
 						,secondaryImage: "images/grass.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
-						,rotation: "180 0 180"
+						,rotation: "180 30 180"
 						,id: "grass"
 						,src: "images/sound.png"
 					},
@@ -105,10 +106,10 @@ angular.module('buffaloJumpApp',[])
 						position: "-2.7 1.7 2" // "x y z"
 						,followBtnImgUrl: 'images/sound.png'
 						,soundSrc: "sounds/mountains.wav"
-						,secondaryImage: "images/mountain.png"
+						,secondaryImage: "images/mountains.png"
 						,mouseEnterScale: "6 6 6"
 						,mouseLeaveScale: "1 1 1"
-						,rotation: "0 0 0"
+						,rotation: "0 40 0"
 						,id: "mountains"
 						,src: "images/sound.png"
 					}
@@ -191,9 +192,8 @@ angular.module('buffaloJumpApp',[])
 		}
 
 		document.addEventListener("click", function(evnt){
-			if ($scope.audio !== undefined && $scope.audio !== null) {
-				$scope.audio = new Audio("sounds/test.wav");
-				$scope.audio.pause()
+			if($scope.audio == undefined) {
+				$scope.descClick(null);
 			}
 		});
 
@@ -205,12 +205,14 @@ angular.module('buffaloJumpApp',[])
 			}
 			$scope.audio = new Audio(descriptor.soundSrc);
 			$scope.audio.play();
+
 			if (descriptor.followBtnImgUrl === 'images/sound.png') {
 					descriptor.followBtnImgUrl =  descriptor.secondaryImage;
 					descriptor.rotation = descriptor.rotation;
 			} else {
 					descriptor.followBtnImgUrl = 'images/sound.png';
 			}
+
 		}
 
 	}]);
