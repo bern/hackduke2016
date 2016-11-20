@@ -7,20 +7,20 @@
     <link rel="stylesheet" type="text/css" href="css/vr.css">
     <script src="js/lib/angular.min.js"></script>
     <script src="js/buffaloJumpApp.js"></script>
-    <script src="https://aframe.io/releases/0.3.0/aframe.js"> </script>
+    <script src="https://aframe.io/releases/0.3.2/aframe.js"> </script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
   </head>
   <body ng-controller="buffaloJumpController">
     <a-scene id="scene">
 
       <a-sky id="sky" src="" rotation="0 130 0"></a-sky>
-      <a-camera id="camera" position="0 1.8 4"
-        cursor-visible="true"
-        cursor-scale="3"
-        cursor-color="red"
-        cursor-offset="2"
-        cursor-maxdistance="10"
-        cursor-opacity="0.6"></a-camera>
+      <a-cursor id="camera"
+        visible="true"
+        scale="3"
+        color="red"
+        position="0 1.8 4"
+        max-distance="10"
+        opacity="0.6"></a-cursor>
 
       <a-image
           ng-repeat="navPoint in scene.navPoints"
